@@ -20,8 +20,9 @@
                 
                 <h3>Lista de Tarefas</h3>
                 
-                <div v-for="line in list" class="all-todos">
-                    <div 
+                <div class="all-todos">
+                    <div
+                        v-for="line in list" 
                         class="single-todo" 
                         @click="line.active = !line.active"
                         v-bind:class="{ done : line.active }"
@@ -30,7 +31,13 @@
                     </div>
                 </div>
 
-                <button class="clear" @click="removeItens">Limpar tudo</button>
+                <button 
+                    class="clear" 
+                    v-if="list.length > 0"
+                    @click="list=[]"
+                >
+                    Limpar tudo
+                </button>
 
                 <input required type="text" placeholder="Escreva uma nova tarefa..." v-model="newItem.item">
                 <button class="add" v-on:click="addItem">
@@ -50,6 +57,5 @@
         </main>
         <script src="https://unpkg.com/vue@next"></script>
         <script src="scripts.js"></script>
-    </body>
-
+    </body> 
 </html>

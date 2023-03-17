@@ -1,36 +1,31 @@
-list = [
-    {
-        item: "Aprender HTML, CSS e Javascript",
-        active: false
-    },
-    {
-        item: "Aprender o básico de Vue JS",
-        active: false
-    },
-    {
-        item: "Completar o desafio de Vue JS com excelência",
-        active: false
-    }
-];
+list = []
 
 const toDoList = {
     data() {
         return {
             list: window.list,
-            newItem: {}
+            newItem: {
+                active: false
+            }
         }
     },
     methods: {
         addItem: function() {
             if (this.newItem.item) {
                 this.list.push(this.newItem);
-                this.newItem = {};
+                this.newItem = {
+                    active: false
+                };
             } else {
                 alert('Preencha o campo antes de adicionar')
             }
         },
         removeItens: function() {
-            
+            list.length = 0;
+         
+            // for (let i = 0; i < list.length; i++) {
+
+            // }
         }
     }
 }
