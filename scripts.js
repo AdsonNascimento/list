@@ -19,13 +19,6 @@ const toDoList = {
             } else {
                 alert('Preencha o campo antes de adicionar')
             }
-        },
-        removeItens: function() {
-            list.length = 0;
-         
-            // for (let i = 0; i < list.length; i++) {
-
-            // }
         }
     }
 }
