@@ -24,7 +24,7 @@
                     <div
                         v-for="line in list" 
                         class="single-todo" 
-                        @click="line.active = !line.active"
+                        @click="line.active = !line.active; storeList()"
                         v-bind:class="{ done : line.active }"
                     >
                         <p>{{ line.item }}</p>
@@ -34,13 +34,13 @@
                 <button 
                     class="clear" 
                     v-if="list.length"
-                    @click="list = []"
+                    @click="list = []; storeList()"
                 >
                     Limpar tudo
                 </button>
 
                 <input required type="text" placeholder="Escreva uma nova tarefa..." v-model="newItem.item">
-                <button class="add" v-on:click="addItem">
+                <button class="add" v-on:click="addItem(); storeList()">
                     Adicionar
                 </button>
 

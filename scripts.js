@@ -19,13 +19,13 @@ const toDoList = {
             } else {
                 alert('Preencha o campo antes de adicionar');
             }
+        },
+        storeList() {
+            localStorage.setItem("list", JSON.stringify(this.list));
         }
     },
     created() {
         this.list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : this.list;
-    },
-    updated() {
-        localStorage.setItem("list", JSON.stringify(this.list));
     }
 }
 
