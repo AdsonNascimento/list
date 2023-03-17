@@ -1,9 +1,7 @@
-list = []
-
 const toDoList = {
     data() {
         return {
-            list: window.list,
+            list: [window.list],
             newItem: {
                 active: false
             }
@@ -16,10 +14,18 @@ const toDoList = {
                 this.newItem = {
                     active: false
                 };
+
+                localStorage.setItem("list", JSON.stringify(this.list));
             } else {
-                alert('Preencha o campo antes de adicionar')
+                alert('Preencha o campo antes de adicionar');
             }
         }
+    },
+    created() {
+        this.list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : this.list;
+    },
+    updated() {
+        localStorage.setItem("list", JSON.stringify(this.list));
     }
 }
 
