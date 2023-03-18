@@ -17,7 +17,6 @@
             
             <section class="todo-list">
                 
-                
                 <h3>Lista de Tarefas</h3>
                 
                 <div class="all-todos">
@@ -39,7 +38,7 @@
                     Limpar tudo
                 </button>
 
-                <input required type="text" placeholder="nova tarefa..." v-model="newItem.item">
+                <input required type="text" placeholder="nova tarefa..." autocomplete="off" v-model="newItem.item">
                 <button class="add" v-on:click="addItem(); storeList()">
                     Adicionar
                 </button>
