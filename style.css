@@ -50,30 +50,26 @@ main button:focus {
     outline:0;
 }
 
+main > section.todo-list {
+    flex-wrap: wrap;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    max-width: 500px;
+    min-width: 300px;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
 main > section.todo-list h3 {
     text-align: center;
     margin-top: 24px;
     width: 100%;
 }
-
-
-main > section.todo-list {
-
-    flex-wrap: wrap;
-    border: 1px solid lightgrey;
-    background-color: rgb(248, 248, 248);
-    padding: 20px;
-    max-width: 500px;
-    min-width: 300px;
-    text-align: center;
-    border-radius: .25rem;
-}
-
 main .all-todos .single-todo {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 main .all-todos .single-todo p {
@@ -96,7 +92,6 @@ main .all-todos .single-todo button.remove {
 }
 
 main > section.todo-list button.clear {
-
     margin-top: 24px;
 }
 
@@ -108,10 +103,27 @@ div.instructions {
 
 div.instructions ul {
     list-style: inside;
-    text-align: center;
+    text-align: left;
     padding: 0;
 }
 
 div.instructions ul li {
     margin: 4px auto;
+}
+
+@media (max-width: 380px) {
+
+    body {
+        background-color: rgb(248, 248, 248);
+    }
+
+    main > section.todo-list {
+        border-radius: 0;
+        box-shadow: none;
+        width: 100vw;
+    }
+
+    div.instructions ul li {
+        width: 80%;
+    }
 }
